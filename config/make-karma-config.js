@@ -1,7 +1,7 @@
 const webpackConfig = require('./webpack.config.js');
 
 module.exports = function(options) {
-  let karmaConfig = {
+  var karmaConfig = {
     frameworks: ['mocha', 'chai'],
 
     browsers: ['PhantomJS'],
@@ -9,11 +9,11 @@ module.exports = function(options) {
     files: [
       // This shim adds .bind to PhantomJS
       './phantomjs-shim.js',
-      '../app/**/__tests__/*.js',
+      '../src/**/__tests__/*.js',
     ],
 
     preprocessors: {
-      '../app/**/__tests__/*.js': ['webpack'],
+      '../src/**/__tests__/*.js': ['webpack'],
     },
 
     webpackMiddleware: {

@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "demo",
   "scripts": {
-    "start": "node server.js",
-    "test": "./node_modules/karma/bin/karma start conf/karma.conf.js --single-run",
-    "test:watch": "./node_modules/karma/bin/karma start conf/karma.conf.js",
-    "test:coverage": "./node_modules/karma/bin/karma start conf/karma.coverage.conf.js --single-run",
-    "test:ci": "./node_modules/karma/bin/karma start conf/karma.ci.conf.js --single-run"
+    "test": "./node_modules/karma/bin/karma start config/karma.conf.js --single-run",
+    "test:watch": "./node_modules/karma/bin/karma start config/karma.conf.js",
+    "test:coverage": "./node_modules/karma/bin/karma start config/karma.coverage.conf.js --single-run",
+    "start": "./node_modules/.bin/webpack-dev-server --config config/webpack.config.js --hot --progress --colors --inline --content-base ./build",
+    "build": "./node_modules/.bin/webpack --config config/webpack.production.js",
+    "test:ci": "./node_modules/karma/bin/karma start config/karma.ci.conf.js --single-run"
   },
   "repository": {
     "type": "git",
