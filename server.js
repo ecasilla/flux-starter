@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+var options = {devtool: 'eval',lint: true}
+var config = require('../config/webpack.config')(options);
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
