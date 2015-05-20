@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "demo",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "./node_modules/karma/bin/karma start conf/karma.conf.js --single-run",
+    "test:watch": "./node_modules/karma/bin/karma start conf/karma.conf.js",
+    "test:coverage": "./node_modules/karma/bin/karma start conf/karma.coverage.conf.js --single-run",
+    "test:ci": "./node_modules/karma/bin/karma start conf/karma.ci.conf.js --single-run"
   },
   "repository": {
     "type": "git",
@@ -20,23 +24,34 @@
     "babel-core": "^5.4.3",
     "babel-loader": "^5.1.2",
     "react-hot-loader": "^1.2.7",
+    "extract-text-webpack-plugin": "^0.8.0",
+    "autoprefixer-loader": "^1.2.0",
+    "sass-loader": "^1.0.2",
+    "style-loader": "^0.12.2",
+    "node-sass": "^3.1.1",
+    "eslint": "^0.17.1",
+    "eslint-loader": "^0.7.0",
+    "html-webpack-plugin": "^1.1.0",
+    "karma-chai": "^0.1.0",
+    "karma-coverage": "^0.2.7",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^1.0.2",
+    "isparta": "^2.2.0",
+    "isparta-instrumenter-loader": "^0.1.1",
+    "karma-notify-reporter": "^0.1.1",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-webpack": "^1.5.0",
+    "css-loader": "^0.12.1",
     "webpack": "^1.9.6",
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
-    "autoprefixer-loader": "^1.2.0",
     "babel": "^5.4.3",
-    "css-loader": "^0.12.1",
-    "extract-text-webpack-plugin": "^0.8.0",
     "fastclick": "^1.0.6",
     "flux": "^2.0.3",
-    "material-ui-sass": "^0.7.5",
-    "node-sass": "^3.1.1",
     "normalize.css": "^3.0.3",
     "object-assign": "^2.0.0",
     "react": "^0.13.0",
-    "react-router": "^0.13.3",
-    "sass-loader": "^1.0.2",
-    "style-loader": "^0.12.2"
+    "react-router": "^0.13.3"
   }
 }

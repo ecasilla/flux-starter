@@ -1,15 +1,11 @@
 import 'babel/polyfill';
 import React from 'react';
 import FastClick from 'fastclick';
-import mui from 'material-ui-sass';
 
 export default class App extends React.Component {
   render() {
-    var {Toolbar,RaisedButton} = mui;
     return (
-     <Toolbar>
-      <RaisedButton label="Create Broadcast" primary={true} />
-     </Toolbar>
+     <h1>Hello World!</h1>
     );
   }
 }
