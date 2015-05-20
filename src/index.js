@@ -1,4 +1,8 @@
 import React from 'react';
-import App from './App';
+import Router from './stores/RouteStore.react.jsx';
+Router.getRouter();
+window.React = React;
 
-React.render(<App />, document.getElementById('root'));
+Router.run(function (Handler, state) {
+  React.render(<Handler/>, document.getElementById('root'));
+});
