@@ -23,7 +23,7 @@ module.exports = function(options) {
     debug: !options.production,
     devtool: options.devtool,
     output: {
-      path: options.production ? './dist' : './build',
+      path: options.production ? './dist' : path.join(__dirname,'./build'),
       publicPath: '',
       filename: options.production ? 'app.[hash].js' : 'app.js',
     },

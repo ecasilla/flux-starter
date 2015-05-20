@@ -20,4 +20,4 @@ Promise.all([
       window.attachEvent('onload', resolve);
     }
   }).then(() => FastClick.attach(document.body))
-]).then(console.log("APP READY"));
+]).then(console.log('APP READY'));
