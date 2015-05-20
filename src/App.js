@@ -1,11 +1,12 @@
 import 'babel/polyfill';
 import React from 'react';
+import {RouteHandler} from 'react-router';
 import FastClick from 'fastclick';
 
 export default class App extends React.Component {
   render() {
     return (
-     <h1>Hello World!</h1>
+    <RouteHandler/>
     );
   }
 }
