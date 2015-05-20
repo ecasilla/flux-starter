@@ -3,7 +3,7 @@ import Dispatcher from '../core/Dispatcher';
 import { ActionTypes } from '../core/Constants.js';
 import assign from 'object-assign';
 
-var AppStore = assign({}, EventEmitter.prototype, {
+var BaseStore = assign({}, EventEmitter.prototype, {
 
   /**
    * Emits change event to all registered event listeners.
@@ -34,12 +34,5 @@ var AppStore = assign({}, EventEmitter.prototype, {
 
 });
 
-AppStore.dispatchToken = Dispatcher.register((action) => {
 
-  switch (action.type) {
-    default:
-      // Do nothing
-  }
-});
-
-export default AppStore;
+export default BaseStore;
