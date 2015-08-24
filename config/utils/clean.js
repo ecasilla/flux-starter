@@ -1,10 +1,8 @@
-'use strict';
+const del = require('del');
+const path = require( 'path');
+const debug = require( 'debug');
 
-import del from 'del';
-import path from 'path';
-import debug from 'debug';
-
-export default () => {
+module.exports = function clean() {
   const DIST_PATH = path.resolve(__dirname, '../../dist/*');
   del.sync([DIST_PATH]);
   debug('dev')('cleaned `dist` directory');

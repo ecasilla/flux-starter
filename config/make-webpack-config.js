@@ -10,7 +10,8 @@ module.exports = function(options) {
   if (options.production) {
     cssLoaders = ExtractTextPlugin.extract('style-loader', cssLoaders.substr(cssLoaders.indexOf('!')));
     sassLoaders = ExtractTextPlugin.extract('style-loader', sassLoaders.substr(sassLoaders.indexOf('!')));
-    require('./utils/clean-dist')();
+    require('./utils/clean')();
+    var writeStats = require('./utils/webStats');
   }
 
   var jsLoaders = ['babel-loader','flowcheck'];
@@ -37,7 +38,7 @@ module.exports = function(options) {
         {
           test: /\.js$|.jsx?$/,
           exclude: /node_modules/,
-          loaders: ['eslint', 'jscs']
+          loaders: ['eslint']
         }
       ] : [],
       loaders: [

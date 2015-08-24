@@ -1,5 +1,3 @@
-'use strict';
-
 // borrowed from https://github.com/gpbl/isomorphic500/blob/master/webpack%2Futils%2Fwrite-stats.js
 import fs from 'fs';
 import path from 'path';
