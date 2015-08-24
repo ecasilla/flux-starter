@@ -8,6 +8,7 @@
     "test:coverage": "./node_modules/karma/bin/karma start config/karma.coverage.conf.js --single-run --debug",
     "start": "./node_modules/.bin/webpack-dev-server --config config/webpack.config.js --hot --display-error-details --colors --inline --content-base ./build",
     "build": "./node_modules/.bin/webpack --config config/webpack.production.js",
+    "changelog": "git log `git describe --tags --abbrev=0`..HEAD --pretty=format:' * %s (%an)' | grep -v 'Merge pull request'",
     "test:ci": "./node_modules/karma/bin/karma start config/karma.ci.conf.js --single-run"
   },
   "repository": {
@@ -32,6 +33,8 @@
     "eslint": "^1.2.1",
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.2.3",
+    "esprima": "^2.2.0",
+    "esprima-fb": "^15001.1.0-dev-harmony-fb",   
     "extract-text-webpack-plugin": "^0.8.0",
     "flowcheck": "^0.2.3",
     "flowcheck-loader": "^1.0.0",

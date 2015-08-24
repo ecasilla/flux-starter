@@ -38,7 +38,7 @@ module.exports = function(options) {
         {
           test: /\.js$|.jsx?$/,
           exclude: /node_modules/,
-          loaders: ['eslint']
+          loaders: ['eslint','jscs']
         }
       ] : [],
       loaders: [
