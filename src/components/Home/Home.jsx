@@ -5,7 +5,7 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   componentWillMount(){
     var body = document.getElementsByTagName('body')[0];
     body.style.background = 'none';
@@ -13,13 +13,13 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
-        <h1>Home?</h1>
+      <Header/>
+      <h1>Home?</h1>
       </div>
     );
   }
 };
 
 Home.contextTypes = {
-   router: React.PropTypes.func
- }
+  router: React.PropTypes.func
+}

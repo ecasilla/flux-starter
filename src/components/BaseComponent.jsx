@@ -8,7 +8,7 @@ import _ from 'lodash';
 * do the magical bind as the react.creatClass method so we must manually bind
 */
 export default class BaseComponent extends React.Component {
- _bind(...methods) {
-  _.each(methods, (method) => this[method] = this[method].bind(this) );
- }
+  _bind(...methods) {
+    _.each(methods, (method) => this[method] = this[method].bind(this) );
+  }
 }

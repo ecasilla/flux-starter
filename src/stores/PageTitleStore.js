@@ -5,25 +5,25 @@ import {ActionTypes} from '../core/Constants';
 class PageTitleStore extends BaseStore{
   constructor() {
     super();
-    debug('dev')('PageTitleStore init')
-    this.subscribe(() => this._registerToActions.bind(this))
+    debug('dev')('PageTitleStore init');
+    this.subscribe(() => this._registerToActions.bind(this));
     this.title = '';
   }
 
   get_title(){
-   return this.title;
+    return this.title;
   }
 
-   _registerToActions(payload) {
+  _registerToActions(payload) {
     switch(payload.action.actionType) {
-      case "PAGE_TITLE":
-        this.title = payload.action.title;
-        this.emitChange();
-        break;
-      default:
-        debug('dev')("PageTitleStore default")
-        break;
-    };
+    case 'PAGE_TITLE':
+      this.title = payload.action.title;
+      this.emitChange();
+      break;
+    default:
+      debug('dev')('PageTitleStore default');
+      break;
+    }
   }
 }
 

@@ -7,11 +7,11 @@ export default class BaseStore extends EventEmitter {
 
   constructor() {
     super();
-    debug('dev')("Base Store Init");
+    debug('dev')('Base Store Init');
   }
 
   subscribe(actionSubscribe) {
-  debug('dev')("Base Store subscribe",actionSubscribe);
+    debug('dev')('Base Store subscribe',actionSubscribe);
     this._dispatchToken = Dispatcher.register(actionSubscribe());
   }
 
@@ -20,18 +20,17 @@ export default class BaseStore extends EventEmitter {
   }
 
   emitChange() {
-    debug('dev')("Base Store change");
+    debug('dev')('Base Store change');
     this.emit(ActionTypes.CHANGE);
   }
 
   addChangeListener(cb) {
-    debug('dev')("Adding change listener",cb.toString());
-    this.on(ActionTypes.CHANGE, cb)
+    debug('dev')('Adding change listener',cb.toString());
+    this.on(ActionTypes.CHANGE, cb);
   }
 
   removeChangeListener(cb) {
-    debug('dev')("Removing change listener",cb.toString());
+    debug('dev')('Removing change listener',cb.toString());
     this.removeListener(ActionTypes.CHANGE, cb);
   }
-
 }

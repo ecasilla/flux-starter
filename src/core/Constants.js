@@ -15,6 +15,6 @@ export default {
     LOGOUT:null
   }),
   API:{
-    BASE_URL:""
+    BASE_URL:''
   }
 };

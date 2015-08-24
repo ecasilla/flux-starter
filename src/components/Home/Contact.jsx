@@ -1,12 +1,12 @@
 import React from 'react';
 import {Paper,FlatButton} from 'material-ui';
-import Header from '../Shared/Header'
+import Header from '../Shared/Header';
 
 export default class Contact extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
     return (
       <div>
