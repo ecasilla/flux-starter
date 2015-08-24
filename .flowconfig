@@ -5,6 +5,7 @@
 .*node_modules/karma.*
 .*node_modules/node-sass.*
 .*/gulpfile.js
+.src/__tests__/*
 
 [include]
 src/*

@@ -1,0 +1,82 @@
+// Typography
+// Font URLs
+$font-google-prim : 'http://fonts.googleapis.com/css?family=Roboto:100,300,400,700';
+$font-google-sec  : 'http://fonts.googleapis.com/css?family=PT+Serif:400,700';
+
+// Font Stacks
+$stack-roboto     : 'Lato', sans-serif;
+$stack-pt-serif   : 'PT Serif', serif;
+
+// Import if Google Font URLs are defined
+@if variable-exists(font-google-prim) {
+  @import url($font-google-prim);
+}
+@if variable-exists(font-google-sec) {
+  @import url($font-google-sec);
+}
+
+$base-font-family: $stack-roboto;
+$heading-font-family: $base-font-family;
+$heading-font-weight: 500 !default;
+$heading-line-height: 1.1 !default;
+$heading-color:       inherit !default;
+
+// Font Sizes
+$base-font-size: 1em;
+$font-size-large:         ceil(($base-font-size * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($base-font-size * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($base-font-size * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($base-font-size * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($base-font-size * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($base-font-size * 1.25)) !default; // ~18px
+$font-size-h5:            $base-font-size !default;
+$font-size-h6:            ceil(($base-font-size * 0.85)) !default; // ~12px
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+$line-height-computed:    floor(($base-font-size * $base-line-height)) !default; // ~20px
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Font Colors
+$base-background-color: $white;
+$base-font-color: $primary-text-color;
+$action-color: $primary-color;
+
+// Border
+$base-border-color: $divider-color;
+$base-border: 1px solid $base-border-color;
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($primary-color, $lightness: -5%, $alpha: -0.3);
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm - 1) !default;
+$screen-sm-max:              ($screen-md - 1) !default;
+$screen-md-max:              ($screen-lg - 1) !default;
+
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px !default;
+//** Text muted color
+//** Abbreviations and acronyms border color
+$abbr-border-color:           $grey-400 !default;
+//** Headings small color
+$headings-small-color:        $grey-400 !default;
+//** Blockquote small color
+$blockquote-small-color:      $grey-400 !default;
+//** Blockquote font size
+$blockquote-font-size:        ($base-font-size * 1.25) !default;
+//** Blockquote border color
+$blockquote-border-color:     $grey-300 !default;
+//** Page header border color
+$page-header-border-color:    $grey-300 !default;
+//** Width of horizontal description list titles
+$dl-horizontal-offset:        $component-offset-horizontal !default;
+//** Horizontal line color.
+$hr-border:                   $grey-300 !default;

@@ -9,25 +9,38 @@ module.exports = function(options) {
     files: [
       // This shim adds .bind to PhantomJS
       './phantomjs-shim.js',
-      '../src/**/__tests__/*.js',
+      '../src/**/__tests__/**/*.js',
     ],
 
     preprocessors: {
-      '../src/**/__tests__/*.js': ['webpack'],
+      '../src/**/__tests__/**/*.js': ['babel','webpack']
     },
 
     webpackMiddleware: {
         noInfo: true
     },
 
+    babelPreprocessor: {
+      options: {
+        sourceMap: 'inline'
+      },
+      filename: function(file) {
+        return file.originalPath.replace(/\.js$/, '.js');
+      },
+      sourceFileName: function(file) {
+        return file.originalPath;
+      }
+    },
+
     reporters: ['mocha'],
 
     plugins: [
       'karma-webpack',
+      'karma-babel-preprocessor',
       'karma-mocha',
       'karma-chai',
       'karma-phantomjs-launcher',
-      'karma-mocha-reporter',
+      'karma-mocha-reporter'
     ]
   };
 

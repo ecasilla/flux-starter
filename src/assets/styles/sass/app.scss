@@ -1,0 +1,20 @@
+//Reset
+@import "core/reset";
+@import "core/typography-reset";
+
+//All base classes for elements are in plugins/base
+@import "plugins/plugins";
+
+// Core setup for the website
+@import "core/core";
+
+@import "modules/modules";
+@import "layouts/layouts";
+
+html{
+  @include background(linear-gradient($grey-200, $grey-400) left repeat);
+}
+#app{
+   @include outer-container;
+   @include size(100%);
+}

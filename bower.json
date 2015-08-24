@@ -1,0 +1,25 @@
+{
+  "name": "highend",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ecasilla/highend",
+  "authors": [
+    "Ernie Casilla <ecasilla@icloud.com>"
+  ],
+  "description": "A highend installation networking aoo",
+  "main": "src/index.js",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "greensock": "~1.17.0"
+  }
+}

@@ -1,1 +1,1 @@
-My Flux Starter
+###Demo App

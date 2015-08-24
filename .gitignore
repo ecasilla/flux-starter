@@ -1,3 +1,5 @@
 node_modules
 npm-debug.log
 .DS_Store
+.sass_cache
+bower_components/

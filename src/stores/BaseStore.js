@@ -1,38 +1,37 @@
 import EventEmitter from 'eventemitter3';
+import debug from 'debug';
 import Dispatcher from '../core/Dispatcher';
 import { ActionTypes } from '../core/Constants.js';
-import assign from 'object-assign';
 
-var BaseStore = assign({}, EventEmitter.prototype, {
+export default class BaseStore extends EventEmitter {
 
-  /**
-   * Emits change event to all registered event listeners.
-   *
-   * @returns {Boolean} Indication if we've emitted an event.
-   */
-  emitChange() {
-    return this.emit(ActionTypes.CHANGE_EVENT);
-  },
-
-  /**
-   * Register a new change event listener.
-   *
-   * @param {function} callback Callback function.
-   */
-  onChange(callback) {
-    this.on(ActionTypes.CHANGE_EVENT, callback);
-  },
-
-  /**
-   * Remove change event listener.
-   *
-   * @param {function} callback Callback function.
-   */
-  off(callback) {
-    this.off(ActionTypes.CHANGE_EVENT, callback);
+  constructor() {
+    super();
+    debug('dev')("Base Store Init");
   }
 
-});
+  subscribe(actionSubscribe) {
+  debug('dev')("Base Store subscribe",actionSubscribe);
+    this._dispatchToken = Dispatcher.register(actionSubscribe());
+  }
 
+  get dispatchToken() {
+    return this._dispatchToken;
+  }
 
-export default BaseStore;
+  emitChange() {
+    debug('dev')("Base Store change");
+    this.emit(ActionTypes.CHANGE);
+  }
+
+  addChangeListener(cb) {
+    debug('dev')("Adding change listener",cb.toString());
+    this.on(ActionTypes.CHANGE, cb)
+  }
+
+  removeChangeListener(cb) {
+    debug('dev')("Removing change listener",cb.toString());
+    this.removeListener(ActionTypes.CHANGE, cb);
+  }
+
+}
