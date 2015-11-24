@@ -3,7 +3,7 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = function(options) {
+module.exports = function webpackConfig(options) {
   var cssLoaders = 'style-loader!css-loader!';
   var sassLoaders = cssLoaders + '!sass-loader?outputStyle=expanded&';
 
@@ -15,13 +15,14 @@ module.exports = function(options) {
   }
 
   var jsLoaders = ['babel-loader','flowcheck'];
-
-  return {
-    entry: [
+  var entry = options.production ? ['./src/index'] : [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
     './src/index'
-    ],
+    ]
+
+  return {
+    entry: entry,
     debug: !options.production,
     devtool: options.devtool,
     cache:true,
